@@ -1,0 +1,48 @@
+package ch09.sec07.exam02;
+
+public class Home {
+	//Field
+	private RemoteControl rc = new RemoteControl() {
+		
+		@Override
+		public void turnOn() {
+			System.out.println("TV를 겹니다.");
+		}
+		
+		@Override
+		public void turnOff() {
+			System.out.println("TV를 끕니다.");
+		}
+	};
+	
+	//Method(Field)
+	public void use1() {
+		rc.turnOn();
+		rc.turnOff();
+	}
+	
+	//Method(variable)
+	public void use2() {
+		RemoteControl rc = new RemoteControl() {
+			
+			@Override
+			public void turnOn() {
+				System.out.println("에어컨을 켭니다.");
+			}
+			
+			@Override
+			public void turnOff() {
+				System.out.println("에어컨을 끕니다.");				
+			}
+		};
+		
+		rc.turnOn();
+		rc.turnOff();
+	}
+	
+	//Method(Parameter)
+	public void use3(RemoteControl rc) {
+		rc.turnOn();
+		rc.turnOff();
+	}	
+}
